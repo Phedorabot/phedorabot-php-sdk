@@ -20,7 +20,7 @@ $client->setRequestURI('/cron/script/parse');
 $client->setCronMaros('30 11,16 * * *');
 
 // set the cronjob service subscription id
-$client->setSubscriptionID('crj_324145629863172456');
+$client->setSubscriptionID('crj_324073213798556798');
 
 // send the request
 try{

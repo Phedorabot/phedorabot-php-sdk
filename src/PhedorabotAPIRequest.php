@@ -178,7 +178,10 @@ final class PhedorabotAPIRequest {
 
         curl_setopt($ch, CURLOPT_URL, $this->uri);
         //for development we might turn off the ssl verification
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
+		curl_setopt($ch, CURLOPT_CAINFO, dirname(getcwd()).'/data/cacert.pem');
+		
         $options[CURLOPT_CUSTOMREQUEST] = $this->requestMethod;
         curl_setopt_array($ch, $options);
 

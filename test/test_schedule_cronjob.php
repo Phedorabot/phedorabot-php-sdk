@@ -1,0 +1,49 @@
+<?php
+
+/**
+* This scripts tests creating cronjobs
+*/
+
+require '../phedorabot.php';
+require 'test_config.php';
+
+$request = PhedorabotClient::initializeRequest(
+Config::API_KEY, Config::API_SECRET);
+
+// we are debuging
+$request->withDebug();
+// Create a cronjob scheduler client
+$client = new PhedorabotCronjobSchedulerAPIClient();
+// set the request path
+$client->setRequestURI('/cron/task/schedule');
+$client->setTaskName('auto start example');
+$client->setTaskDescription('some auto start that runs at a given time');
+// set the cronjob macros we want to valid and verify
+$client->setCronMaros('30 11,16 * * 1,3,5');
+$client->addCustomHeader('key1', 'value1');
+$client->addCustomHeader('key2', 'value2');
+
+$client->addCustomProperty('key1', 'value1');
+$client->addCustomProperty('key2', 'value2');
+
+// set the cronjob service subscription id
+$client->setSubscriptionID('crj_324145629863172456');
+
+// set the callback uri
+$client->setCallbackURI('http://www.amastore.com/cron/callback/');
+// send the request
+try{
+
+  $response = $request->send($client);
+  // do we have an error
+  if($response->isError()){
+    echo $response->getError();
+  }else{
+    // we have a response
+    echo json_encode($response->getRawData());
+  }
+
+}catch(PhedorabotAPIError $ex){
+  echo $ex->getMessage();
+}
+echo "\n\nDone\n\n";

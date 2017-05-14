@@ -30,6 +30,7 @@ function initialize_phedorabot_library(){
   $path = $root.'/src';
 
   $list = @scandir($path);
+
   if ($list === false) {
     throw new Exception("Unable to list contents of directory `{$path}`");
   }
@@ -62,7 +63,7 @@ function initialize_phedorabot_library(){
     try{
       require_once $file_path;
     }catch(Exception $ex){
-      echo $ex->getMessage();
+      echo 'File Error : '.$ex->getMessage();
     }
   }
 }

@@ -29,7 +29,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
   // for processing the request. Load the phedorabot.php script located within
   // the phedorabot-php-sdk folder
 
-  require_once = '/path/phedorabot-php-sdk/phedorabot.php';
+  require_once = '/path/to/phedorabot-php-sdk/phedorabot.php';
 
   // Wrap the entire process in a try/catch block to deal with exceptions
   try{
@@ -40,7 +40,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     // set the raw payload sent from Phedorabot servers, this is located in a
     // post variable called 'payload'
 
-    $engine->setRawData($_POST['payload']);
+    $engine->setRawData($_POST);
     // set the raw post headers to build the headers coming from Phedorabot
     // if you had sent in custom headers, you will also find it in the headers
     // as well
@@ -85,6 +85,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         // by calling $engine->addResult('key', 'value');
       }
     }
+
+  }catch(PhedorabotWebHookEngineException $ex){
+    
+    $engine->setError('exception');
+    $engine->setErrorDescription($ex->getMessage());
 
   }catch(Exception $ex){
 

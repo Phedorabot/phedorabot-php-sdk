@@ -17,7 +17,7 @@ $client = new PhedorabotOneTimeSchedulerAPIClient();
 // set the request path
 $client->setRequestURI('/onetime/task/schedule');
 // set subscription id
-$client->setSubscriptionID('ott_109433078741338350');
+$client->setSubscriptionID('ott_368304984053430447');
 
 // We want to schedule a task that will executed at a future date
 $client->setRequestURI('/onetime/task/schedule');
@@ -61,7 +61,7 @@ $client->addCustomProperty('key2', 'value2');
 // sent to. This should be a uri on your server
 
 // set the callback uri
-$client->setCallbackURI('http://www.amastore.com/onetime/callback/');
+$client->setCallbackURI('http://www.mywebsite.com/cron/callback/');
 // send the request
 try{
 

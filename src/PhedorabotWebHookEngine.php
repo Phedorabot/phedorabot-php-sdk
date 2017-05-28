@@ -83,6 +83,10 @@ final class PhedorabotWebHookEngine {
   }
 
   public function setRawData($raw_data){
+    if(is_array($raw_data)){
+      $raw_data = json_encode($raw_data);
+    }
+    
     $this->rawData = $raw_data;
     return $this;
   }

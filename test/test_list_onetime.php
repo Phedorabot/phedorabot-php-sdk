@@ -16,7 +16,7 @@ $request->withDebug();
 $client = new PhedorabotOneTimeSchedulerAPIClient();
 // set the request path
 $client->setRequestURI('/onetime/task/list');
-$client->setSubscriptionID('ott_109433078741338350');
+$client->setSubscriptionID('ott_368304984053430447');
 // send the request
 try{
 

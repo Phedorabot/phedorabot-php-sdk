@@ -27,10 +27,10 @@ $client->addCustomProperty('key1', 'value1');
 $client->addCustomProperty('key2', 'value2');
 
 // set the cronjob service subscription id
-$client->setSubscriptionID('crj_324145629863172456');
+$client->setSubscriptionID('crj_137142717460555707');
 
 // set the callback uri
-$client->setCallbackURI('http://www.amastore.com/cron/callback/');
+$client->setCallbackURI('http://www.mywebsite.com/cron/callback/');
 // send the request
 try{
 

@@ -16,7 +16,7 @@ $request->withDebug();
 $client = new PhedorabotCronjobSchedulerAPIClient();
 // set the request path
 $client->setRequestURI('/cron/task/list');
-$client->setSubscriptionID('crj_324145629863172456');
+$client->setSubscriptionID('crj_137142717460555707');
 // send the request
 try{
 

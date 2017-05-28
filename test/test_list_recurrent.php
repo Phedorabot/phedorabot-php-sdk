@@ -16,7 +16,7 @@ $request->withDebug();
 $client = new PhedorabotRecurrentSchedulerAPIClient();
 // set the request path
 $client->setRequestURI('/recurrent/task/list');
-$client->setSubscriptionID('rcu_230352266626473021');
+$client->setSubscriptionID('rcu_277870587038832398');
 // send the request
 try{
 

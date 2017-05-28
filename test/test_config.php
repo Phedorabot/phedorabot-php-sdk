@@ -1,11 +1,26 @@
 <?php
 
+/** Copyright 2017 Phedorabot
+*
+* Licensed under the Apache License, Version 2.0 (the "License"); you may
+* not use this file except in compliance with the License. You may obtain
+* a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+* WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+* License for the specific language governing permissions and limitations
+* under the License.
+*/
+
 // provides random configs
 final class Config{
     # The api key
-    const API_KEY = 'T21DbkFKdytjelUvVWp0';
+    const API_KEY = 'N3dMT3dHZ2xiMGNpUUkK';
     # The api secret
-    const API_SECRET = 'elJ4bW5YODJOTXFrTDFhR1BnTVFkNWJNSU5JSUVG';
+    const API_SECRET = 'OHZMUUxJamZyc3Z3cTVzTzlpaG1meEVOdkgwaGt4';
     # The access token
     const ACCESS_TOKEN = '';
   }

@@ -39,9 +39,9 @@ $client->setPeriodLength(3);
 
 // Set the date that should be used for computing when the task will execute
 // this date will be used for calculating when the task will execute, like for
-// example if today is 2017-03-12 10:19:49, that is today is March 12th, 2017 at 10:19 am, then
-// the task will execute three weeks from that date ,2017-04-02 10:19:49 that is on
-// April 2nd, 2017 at 10:19 am
+// example if today is 2017-03-12 10:19:49, that is today is March 12th, 2017
+// at 10:19 am, then the task will execute three weeks from that date ,
+// 2017-04-02 10:19:49 that is on April 2nd, 2017 at 10:19 am
 
 $client->setStartDate($start_date);
 

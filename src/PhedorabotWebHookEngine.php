@@ -86,7 +86,7 @@ final class PhedorabotWebHookEngine {
     if(is_array($raw_data)){
       $raw_data = json_encode($raw_data);
     }
-    
+
     $this->rawData = $raw_data;
     return $this;
   }
@@ -130,7 +130,7 @@ final class PhedorabotWebHookEngine {
       // Note this key pair is needed to actually verify the integrity of
       // this payload, failing to do this will not
 
-      $this->payload = $payload;
+      $this->payload = $this->trimPayload($payload);
       $this->addResult('status', 'message delivered');
 
     }catch(PhedorabotWebHookEngineException $ex){
@@ -144,6 +144,15 @@ final class PhedorabotWebHookEngine {
     }
 
     return $status;
+  }
+
+  private function trimPayload(array $props){
+    $maps = array();
+    foreach($props as $k => $v){
+      $maps[trim($k)] = trim($v);
+    }
+
+    return $maps;
   }
 
   public function verifyTaskExecutionPayload(){
@@ -211,6 +220,8 @@ final class PhedorabotWebHookEngine {
     ksort($flattened);
     $data = array();
     foreach($flattened as $key=>$value){
+      $key = trim($key);
+      $value = trim($value);
       $data[] = "{$key}={$value}";
     }
 

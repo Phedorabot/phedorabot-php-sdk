@@ -81,6 +81,18 @@ final class PhedorabotRecurrentSchedulerAPIClient extends PhedorabotAPIClient{
   }
 
   /**
+  * Add a custom proper maps if you already have a dictionary of properties
+  * whose keys consists of strings and whose values consists of strings you can
+  * set the properties at once using this method
+  */
+  public function addCustomPropertyMap(array $properties){
+    foreach($properties as $prop_key => $prop_value){
+      $this->addCustomProperty($prop_key, $prop_value);
+    }
+    return $this;
+  }
+
+  /**
   * Add custom properties to this recurrent task, this will always be sent
   * back to your callback uri each time Phedorabot sends an instant
   * execution notification

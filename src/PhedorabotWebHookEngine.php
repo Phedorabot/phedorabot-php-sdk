@@ -111,15 +111,13 @@ final class PhedorabotWebHookEngine {
       // throw an exception
       if(!$this->rawData || !strlen($this->rawData)){
         throw new PhedorabotWebHookEngineException(
-        'invalid_payload'
-        ,'Task Web hook listener received an invalid task execution payload');
+        'Task Web hook listener received an invalid task execution payload');
       }
 
       $payload = json_decode($this->rawData, true);
       if(!$payload || !is_array($payload)){
         throw new PhedorabotWebHookEngineException(
-        'invalid_payload'
-        , 'Task Web hook listener is unable to decode the task execution '.
+        'Task Web hook listener is unable to decode the task execution '.
         'message payload');
       }
 
@@ -159,8 +157,7 @@ final class PhedorabotWebHookEngine {
 
     if(!$this->payload){
       throw new PhedorabotWebHookEngineException(
-      'invalid_payload'
-      , 'Task execution payload is not defined');
+      'Task execution payload is not defined');
     }
 
     $hmac_string = $this->computeHMAC($this->payload);

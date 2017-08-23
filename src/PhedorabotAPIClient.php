@@ -24,8 +24,8 @@ abstract class PhedorabotAPIClient {
     protected $api;
     protected $uri;
 
-    const REQUEST_ENDPOINT = 'http://www.phedoradev.com/api/v1/';
-    
+    const REQUEST_ENDPOINT = 'https://www.phedorabot.com/api/v1/';
+
     public function __construct() {
       $this->parameters = array();
     }

@@ -15,4 +15,32 @@
 * under the License.
 */
 
-final class PhedorabotWebHookEngineException extends Exception{}
+final class PhedorabotWebHookEngineException extends Exception{
+  protected $what;
+  protected $reason;
+
+  public function __construct($message='', $code=0){
+    parent::__construct($message, $code);
+
+    $this->what = '';
+    $this->reson = '';
+
+  }
+  final public function setWhat($what){
+    $this->what = $what;
+    return $this;
+  }
+
+  final public function getWhat(){
+    return $this->what;
+  }
+
+  final public function setReason($reason){
+    $this->reason = $reason;
+    return $this;
+  }
+
+  final public function getReason(){
+    return $this->reason;
+  }
+}

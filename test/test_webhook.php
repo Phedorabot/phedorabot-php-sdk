@@ -17,30 +17,20 @@
 
 require '../phedorabot.php';
 // sample cronjob payload from phedorabot
-$test_data = '
-{"cronjob_id":"295039090705787663",
-  "service_name":"Recurrent Event Service",
-  "subscription_id":"rcu_353431617358994734",
-  "execution_id":"274295575708856625",
-  "task_name":"Recurrent event for 2017-03-21 8:18:22",
-  "execution_epoch":"1492759102",
-  "execution_date":"April 21st, 2017 at 7:18 am",
-  "next_epoch":"1495351102",
-  "next_execution_date":"May 21st, 2017 at 7:18 am",
-  "cronjob_script":null,
-}';
+
+$test_data = '{"job_id":"352667059500430128","service_name":"One Time Trigger Service","subscription_id":"ott_110801827011331707","execution_id":"166887952632453844","task_name":"RAJI TARIQ","execution_epoch":"1514446200","execution_date":"December 28th, 2017 at 7:30 am","next_epoch":"1545982200","next_execution_date":"December 28th, 2018 at 7:30 am","task_duration":"1 Year","user_guid":"6lmhcmazsltepsxwtyrt","user_birthday_epoch":"1514446200","family_guids":"xfl3neemltidwc3xirvo,f5dvlspdldlfsmlnfqop\r\n"}';
 
 $test_headers = '{
-  "HTTP_X_PHEDORABOT_NOTIFICATION_DIGEST":"9504aa75bde1a51ddfdcdbb432f35e834c0f279a",
+  "HTTP_X_PHEDORABOT_NOTIFICATION_DIGEST":"965d207a58a302562a548fa28fcdc0611343d8b0f8664c2ccf918f2f80497fa4",
   "HTTP_X_PHEDORABOT_SENT_THIS":"1",
-  "HTTP_X_PHEDORABOT_API_KEY":"eXZ2U1dtdWRKczFqYmNj"
+  "HTTP_X_PHEDORABOT_API_KEY":"YlNiZQp0QWlkVnBJQ0g4"
 }';
 
 
 $engine = new PhedorabotWebHookEngine();
 $engine->setRawHeaders(json_decode($test_headers, true));
 $engine->setRawData($test_data);
-$engine->setApiSecret('aU42Rm5DZ1JnQTAwMkVLZ0dOenBtY01kNTQrZlJq');
+$engine->setApiSecret('SFUraUVjU2RUeDRoemNXTnJaaXVEZGJNRW9TRFN5');
 if($engine->isValidTaskExecution()){
   // we can verify the task execuetion
   echo "Valid task execution processing payload...\n";

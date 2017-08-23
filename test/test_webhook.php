@@ -27,7 +27,7 @@ $test_data = '
   "execution_date":"April 21st, 2017 at 7:18 am",
   "next_epoch":"1495351102",
   "next_execution_date":"May 21st, 2017 at 7:18 am",
-  "cronjob_script":null,"properties":{"random.key":"er6ttejgsmtx"}
+  "cronjob_script":null,
 }';
 
 $test_headers = '{

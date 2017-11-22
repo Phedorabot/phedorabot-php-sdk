@@ -18,9 +18,9 @@
 // provides random configs
 final class Config{
     # The api key
-    const API_KEY = 'N3dMT3dHZ2xiMGNpUUkK';
+    const API_KEY = 'Q3BocVdLeVh1cS9UUTdy';
     # The api secret
-    const API_SECRET = 'OHZMUUxJamZyc3Z3cTVzTzlpaG1meEVOdkgwaGt4';
+    const API_SECRET = 'Zkk5WlNybzlIYVhuMmdOQ3BocVdLeVh1cS9UUTdy';
     # The access token
     const ACCESS_TOKEN = '';
   }

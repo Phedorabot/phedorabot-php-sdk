@@ -271,8 +271,8 @@ final class PhedorabotAPIRequest {
             //echo "Got : {$response_string} \n";
         }
 
-        list($status_code, $body, $headers, $raw) = $this->parseRawHTTPResponse(
-                $response_string);
+        list($status_code, $body, $headers, $raw) =
+        $this->parseRawHTTPResponse($response_string);
 
         if (!$status_code) {
             throw new PhedorabotAPIError(
